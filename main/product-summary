@@ -1,0 +1,25 @@
+		<?php 
+			include('../connect.php');
+				$result = $db->prepare("SELECT * FROM products where qty < 10 ORDER BY product_id DESC");
+				$result->execute();
+				$rowcount123 = $result->rowcount();
+
+			?>
+				<div style="text-align:center;">
+			Total Number of Products:  <font color="green" style="font:bold 22px 'Aleo';">[<?php echo $rowcount;?>]</font>
+			</div>
+			
+			<div style="text-align:center;">
+			<font style="color:rgb(255, 95, 66);; font:bold 22px 'Aleo';">[<?php echo $rowcount123;?>]</font> Products are below QTY of 10 
+			</div>
+</div>
+			<?php 
+			include('../connect.php');
+				$result = $db->prepare("SELECT * FROM products where expiry_date < NOW() ORDER BY product_id DESC");
+				$result->execute();
+				$total = $result->rowcount();
+
+			?>
+<div style="text-align:center;">
+			<font style="color:#e30fff; font:bold 22px 'Aleo';">[<?php echo $total;?>]</font> Total expired products   
+			</div>

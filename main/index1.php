@@ -1,0 +1,62 @@
+<html>
+<head>
+
+<style>
+	a #dash-tab :hover{
+		background-color:yellow;
+		background-color:green;
+	}
+</style>
+</head>
+
+<?php include 'header.php'; ?>
+<?php include('navfixed.php');?>
+    <div class="container-fluid">
+      <div class="row-fluid">
+	
+	
+	<div class="contentheader">
+			<i class    ="icon-dashboard"></i> Dashboard
+			</div>
+			<ul class="breadcrumb">
+			<li class="active">Dashboard</li>
+			</ul>
+			<font style=" font:bold 25px 'Aleo'; color:#0489bd;"><center>MICKYSOFT TECHNOLOGIES</center></font>
+<div id="mainmain">
+	<?php
+$position=$_SESSION['SESS_POSITION'];
+
+//echo($position." is the name");
+if($position=='Cashier') {
+?>
+ <a href="sales.php?id=cash&invoice=<?php echo $finalcode ?>"><i class="icon-shopping-cart icon-2x"></i><br> Sales</a>
+<a href="customer.php"><i class="icon-group icon-2x"></i><br> Customers</a>  
+
+<a href="../index.php"><i class="icon-signout icon-2x"></i><br>Logout</a>   <hr>
+<?php
+}
+if($position=='admin') {
+?>
+
+<a href="sales.php?id=cash&invoice=<?php echo $finalcode ?>"  id="dash-tab"><i class="icon-shopping-cart icon-2x"></i><br> Sales</a>               
+<a href="products.php" id="dash-tab" style=" : hover{background-color:green;}"><i class="icon-list-alt icon-2x"></i><br> Products</a>                
+<a href="cat.php" class="dash-tab"><i class="icon-list-alt icon-2x"></i><br> Categories</a>     
+<a href="customer.php" class="dash-tab"><i class="icon-group icon-2x"></i><br> Customers</a>     
+<a href="supplier.php"  class="dash-tab"><i class="icon-group icon-2x"></i><br> Suppliers</a>     
+<a href="salesreport.php?d1=0&d2=0" class="dash-tab"><i class="icon-bar-chart icon-2x"></i><br> Sales Report</a>     
+<a href="admin-settings.php" class="dash-tab"><i class="icon-flag icon-2x"></i><br> User Manager</a>  
+<?php 
+   }                   
+    ?>
+<div class="clearfix"></div>
+</div>
+</div>
+</div>
+</body>
+<footer><center>Brought To You By <a href=#>MickySoftTechnologies.com</a></center></footer>
+<?php 
+echo $_SESSION['username'] ;
+echo $_SESSION['SESS_DEPARTMENT'];
+echo $_SESSION['SESS_FULL_NAME'];
+include('footer.php'); ?>
+</html>
