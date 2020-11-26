@@ -81,7 +81,7 @@ window.onload=startclock;
 <center><h4><i class="icon-plus-sign icon-large"></i> Add Product</h4></center>
 <hr>
 <div id="ac">
-<span>Item Code : </span><input type="text" style="width:265px; height:30px;" value="JAEL-<?php 
+<span>Item Code : </span><input type="text" style="width:265px; height:30px;" value="MHS-<?php 
 $prefix= md5(time()*rand(1, 2)); echo strip_tags(substr($prefix ,0,4));?>" name="code" Readonly Required ><br>
 <span>Item Name : </span><input type="text" style="width:265px; height:30px;" name="name" Required/><br>
 <span>Category : </span>
